@@ -10,7 +10,7 @@ Questo è un semplice worm per windows scritto in python.
 3. Exploita smbghost che garantisce **NT AUTHORITY\SYSTEM**
 
 ### Difetti
-1. Per il momento exploita solo smbghost (CVE-2020-0796).
+1. Per il momento supporta solo smbghost (CVE-2020-0796).
 2. Per il momento compromette SMB v3.11 con compressione attiva.
 
 ### Da fare
@@ -29,7 +29,7 @@ Se volte contribuire al progetto fate pure, approverò quasi tutte le pull reque
 3. Exploits smbghost which guarantees **NT AUTHORITY\SYSTEM**.
 
 ### Flaws
-1. For the time being it only exploits smbghost (CVE-2020-0796).
+1. For the time being it only supports smbghost (CVE-2020-0796).
 2. For the time being it compromises SMB v3.11 with active compression.
 
 ### To do
