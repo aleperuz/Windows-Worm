@@ -5,9 +5,8 @@ import socket
 import struct
 
 
-from lznt1 import compress, compress_evil
 from smb_win import smb_negotiate, smb_compress
-
+from lznt1 import compress, compress_evil
 # Use lowstub jmp bytes to signature search
 LOWSTUB_JMP = 0x1000600E9
 # Offset of PML4 pointer in lowstub
