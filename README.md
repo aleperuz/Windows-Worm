@@ -6,8 +6,7 @@ Questo è un semplice worm per windows scritto in python.
 
 ### Funzioni.
 1. E' scritto in python ed è semplice da modificare.
-2. Prima di exploitare i target fa una scansione della rete per trovare porte 445 aperte.
-3. Exploita smbghost che garantisce **NT AUTHORITY\SYSTEM**
+2. Exploita smbghost che garantisce **NT AUTHORITY\SYSTEM**
 
 ### Difetti
 1. Per il momento supporta solo smbghost (CVE-2020-0796).
@@ -25,8 +24,7 @@ Se volte contribuire al progetto fate pure, approverò quasi tutte le pull reque
 
 ### Functions.
 1. It is written in python and is easy to modify.
-2. Before exploiting targets it scans the network for open 445 ports.
-3. Exploits smbghost which guarantees **NT AUTHORITY\SYSTEM**.
+2. Exploits smbghost which guarantees **NT AUTHORITY\SYSTEM**.
 
 ### Flaws
 1. For the time being it only supports smbghost (CVE-2020-0796).
